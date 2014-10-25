@@ -11,9 +11,9 @@ object TestsDeserializer {
     val data = Json.parse(json)
 
     for (value <- (data \ "tests").as[List[JsObject]]) {
-      var questionsUrl = (value \ "quizz").as[String]
-      var answersUrl = (value \ "assessment").as[String]
-      var gradesUrl = (value \ "scores").as[String]
+      val questionsUrl = (value \ "quizz").as[String]
+      val answersUrl = (value \ "assessment").as[String]
+      val gradesUrl = (value \ "scores").as[String]
 
       tests ::= Test(questionsUrl, answersUrl, gradesUrl)
     }

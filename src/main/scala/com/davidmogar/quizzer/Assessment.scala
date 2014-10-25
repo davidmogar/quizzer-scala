@@ -5,9 +5,9 @@ import com.davidmogar.quizzer.domain.{Grade, Answer, Question}
 import scala.collection.mutable.HashMap
 import scala.util.control.Breaks._
 
-case class Assessment(val questions: HashMap[Long, Question],
-                      val answers: HashMap[Long, List[Answer]],
-                      val grades: HashMap[Long, Grade]) {
+case class Assessment(questions: HashMap[Long, Question],
+                      answers: HashMap[Long, List[Answer]],
+                      grades: HashMap[Long, Grade]) {
 
   /**
    * Calculate the grades of this assessment.
