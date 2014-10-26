@@ -2,7 +2,7 @@
 
 [![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-java.svg?token=wmck5BREt8bmqUpsNF4v&branch=master)](https://magnum.travis-ci.com/davidmogar/quizzer-java)
 
-This is the Ruby version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to generate and/or validate grades for all the students.
+This is the Scala version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to generate and/or validate grades for all the students.
 
 ##Usage
 
@@ -17,6 +17,9 @@ Quizzer is a command line application and can be executed with the next options:
 As an example, the arguments `-q questions.json -a answers.json -o xml -s` will generate grades and statistics for the given assessment data and will show the result as xml files in the standard output.
 
 ##Dependencies
+- Play-json 2.3.4
+- Scalatest 2.2.1
+- Scopt 3.2.0
 
 Quizzer require the next dependencies:
 - Sinatra 1.4.5
