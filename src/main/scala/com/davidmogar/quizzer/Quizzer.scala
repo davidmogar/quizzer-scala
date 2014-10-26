@@ -27,7 +27,7 @@ object Quizzer {
 
     showGrades(assessment.grades, format)
 
-    if (config.statistics != "") {
+    if (config.statistics) {
       showStatistics(assessment.getStatistics(), format)
     }
   }
