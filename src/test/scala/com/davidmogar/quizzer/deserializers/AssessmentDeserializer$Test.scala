@@ -90,6 +90,6 @@ class AssessmentDeserializer$Test extends org.scalatest.FlatSpec with BeforeAndA
     questions.get(2).get.asInstanceOf[TrueFalseQuestion].correct should be (true)
 
     val answers = AssessmentDeserializer.deserializeAnswers(answersJson)
-    questions.get(1).get.getScore(answers.get(234).get(0)) should be (1.0 +- 0.05)
+    questions.get(1).get.getScore(answers.get(234).get(1)) should be (1.0 +- 0.05)
   }
 }

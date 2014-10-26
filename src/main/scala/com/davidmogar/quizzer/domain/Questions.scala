@@ -25,7 +25,7 @@ case class MultichoiceQuestion(override val id: Long, override val text: String)
   }
 
   override def getScore(answer: Answer): Double =
-    (for { a <- Try{answer.value.toLong}.toOption ; b <- alternatives.get(a) } yield b.value).getOrElse(0)
+    (for { a <- Try{answer.value.toLong}.toOption ; b <- alternatives.get(a) } yield b.value).getOrElse(3)
 
   case class Alternative(val id: Long, val text: String, val value: Double)
 }
