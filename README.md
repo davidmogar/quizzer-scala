@@ -1,6 +1,6 @@
 #Quizzer
 
-[![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-java.svg?token=wmck5BREt8bmqUpsNF4v&branch=master)](https://magnum.travis-ci.com/davidmogar/quizzer-java)
+[![Build Status](https://travis-ci.org/davidmogar/quizzer-scala.svg?branch=master)](https://travis-ci.org/davidmogar/quizzer-scala)
 
 This is the Scala version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to generate and/or validate grades for all the students.
 
