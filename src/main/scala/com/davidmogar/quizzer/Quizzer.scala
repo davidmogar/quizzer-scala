@@ -8,6 +8,10 @@ import com.davidmogar.quizzer.serializers.AssessmentSerializer
 
 import scala.collection.mutable
 
+/**
+ * Helps to validate assessments, parsing questions and answers json files and generating new files with students'
+ * grades and questions statistics.
+ */
 object Quizzer {
 
   /**
@@ -29,6 +33,12 @@ object Quizzer {
     }
   }
 
+  /**
+   * Show information about the assessment.
+   *
+   * @param assessment Assessment with the data
+   * @param config Command line arguments
+   */
   def showAssessment(assessment: Assessment, config: Config): Unit = {
     val format = if (config.output != "" && config.output == "xml") "xml" else "json"
 
@@ -39,16 +49,33 @@ object Quizzer {
     }
   }
 
+  /**
+   * Show the grades received as argument in the format specified.
+   *
+   * @param grades grades to show
+   * @param format format of the output
+   */
   def showGrades(grades: mutable.HashMap[Long, Grade], format: String): Unit = {
     println("Assessment's grades:")
     println(AssessmentSerializer.serializeGrades(grades, format) + "\n")
   }
 
+  /**
+   * Show the statistics received as argument in the format specified.
+   *
+   * @param statistics statistics to show
+   * @param format format of the output
+   */
   def showStatistics(statistics: mutable.HashMap[Long, Integer], format: String): Unit = {
     println("Assessment's statistics:")
     println(AssessmentSerializer.serializeStatistics(statistics, format) + "\n")
   }
 
+  /**
+   * Validate tests inside of the file referenced by the URL argument.
+   *
+   * @param url URL to the tests file
+   */
   def validateAssessments(url: URL): Unit = {
     var valid = true;
     val tests = TestsLoader.loadTests(url)
@@ -87,6 +114,7 @@ object Quizzer {
       help("help") text ("Show this help")
     }
 
+    /* Parse command line arguments and decide what method to call next */
     try {
       parser.parse(args, Config()) map { config =>
         if (args.length == 0) {

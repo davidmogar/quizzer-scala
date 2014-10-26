@@ -7,6 +7,12 @@ sealed trait Question {
   val id: Long
   val text: String
 
+  /**
+   * Calculates the score obtained by an student given its answer.
+   *
+   * @param answer answer of the student to this question
+   * @return calculated score
+   */
   def getScore(answer: Answer): Double
 }
 

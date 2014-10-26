@@ -6,7 +6,12 @@ import play.api.libs.json._
 import scala.collection.mutable
 
 object AssessmentXmlSerializer {
-
+  /**
+   * Returns an string with the representation of the grades in XML format.
+   *
+   * @param grades grades to serialize
+   * @return an string with the representation in the desired format
+   */
    def serializeGrades(grades: mutable.HashMap[Long, Grade]): String = {
      var jsonString = "<scores>\n"
 
@@ -18,6 +23,12 @@ object AssessmentXmlSerializer {
      jsonString + "</scores>"
    }
 
+  /**
+   * Returns an string with the representation of the statistics in XML format.
+   *
+   * @param statistics statistics to serialize
+   * @return an string with the representation in the desired format
+   */
    def serializeStatistics(statistics: mutable.HashMap[Long, Integer]): String = {
      var jsonString = "<statistics>\n"
 

@@ -7,6 +7,12 @@ import scala.collection.mutable
 
 object AssessmentDeserializer {
 
+  /**
+   * Deserializes the JSON representation received as arguments to a map of student ids to Answer objects.
+   *
+   * @param json JSON representation of the answers objects
+   * @return a map of student ids to Answer objects
+   */
   def deserializeAnswers(json: String): mutable.HashMap[Long, List[Answer]] = {
     val answers = new mutable.HashMap[Long, List[Answer]]()
     val data = Json.parse(json)
@@ -25,6 +31,12 @@ object AssessmentDeserializer {
     return answers
   }
 
+  /**
+   * Deserializes the JSON representation received as arguments to a map of student ids to Grade objects.
+   *
+   * @param json JSON representation of the grades objects
+   * @return a map of student ids to Grade objects
+   */
   def deserializeGrades(json: String): mutable.HashMap[Long, Grade] = {
     val grades = new mutable.HashMap[Long, Grade]()
     val data = Json.parse(json)
@@ -38,6 +50,12 @@ object AssessmentDeserializer {
     return grades
   }
 
+  /**
+   * Deserializes the JSON representation received as arguments to a map of questions ids to Question objects.
+   *
+   * @param json JSON representation of the questions objects
+   * @return a map of questions ids to Question objects
+   */
   def deserializeQuestions(json: String): mutable.HashMap[Long, Question] = {
     var questions = new mutable.HashMap[Long, Question]()
     var data = Json.parse(json)

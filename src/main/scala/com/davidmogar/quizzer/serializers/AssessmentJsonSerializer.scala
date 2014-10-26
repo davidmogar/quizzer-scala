@@ -6,7 +6,12 @@ import play.api.libs.json._
 import scala.collection.mutable
 
 object AssessmentJsonSerializer {
-
+  /**
+   * Returns an string with the representation of the grades in JSON format.
+   *
+   * @param grades grades to serialize
+   * @return an string with the representation in the desired format
+   */
   def serializeGrades(grades: mutable.HashMap[Long, Grade]): String = {
     var jsonString = "{ \"scores\": ["
 
@@ -20,6 +25,12 @@ object AssessmentJsonSerializer {
     Json.prettyPrint(Json.parse(jsonString))
   }
 
+  /**
+   * Returns an string with the representation of the statistics in JSON format.
+   *
+   * @param statistics statistics to serialize
+   * @return an string with the representation in the desired format
+   */
   def serializeStatistics(statistics: mutable.HashMap[Long, Integer]): String = {
     var jsonString = "{ \"items\": ["
 

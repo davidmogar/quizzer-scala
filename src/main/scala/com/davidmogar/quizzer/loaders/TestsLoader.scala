@@ -8,6 +8,12 @@ import com.davidmogar.quizzer.utils.UrlReader
 
 object TestsLoader {
 
+  /**
+   * Returns a list of tests objects loaded from the file referenced by the URL argument.
+   *
+   * @param testsUrl URL to the tests file
+   * @return a list of tests objects or an string with the error occurred.
+   */
   def loadTests(testsUrl: URL): Either[List[Test], String] = {
     try {
       Left(TestsDeserializer.deserialize(UrlReader.getStreamAsString(testsUrl)))
