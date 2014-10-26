@@ -10,6 +10,13 @@ import scala.collection.mutable
 
 object Quizzer {
 
+  /**
+   * Calculate assessments' grades given the urls to the questions and answers files.
+   *
+   * @param questionsUrl URL to the questions file
+   * @param answersUrl URL to the answers file
+   * @return a new assessment with containing questions, answers and calculated grades
+   */
   def calculateGrades(questionsUrl: URL, answersUrl: URL): Either[Assessment, String] = {
     try {
       val assessment = AssessmentLoader.loadAssessmentFromUrl(questionsUrl, answersUrl)
