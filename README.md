@@ -29,7 +29,7 @@ Quizzer require the next dependencies:
 
 The app can be used as a web server if it is launched without arguments. In this mode you can navitate to [localhost:4567](http://localhost:4567) what would return the next form that can be used to generate grades.
 
-![Quizzer](http://davidmogar.com/uploads/github/quizzer.png)
+![Quizzer](http://davidmogar.leakedbits.com/uploads/github/quizzer.png)
 
 
 ##JSON files
